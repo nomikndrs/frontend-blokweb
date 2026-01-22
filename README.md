@@ -39,11 +39,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Rhode https://www.rhodeskin.com/en-nl
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
+  Home  
   <img src="readme-images/eerste_scherm.png" width="375px" alt="eerste scherm van Rhode">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
+  Products 
   <img src="readme-images/tweede_scherm.png" width="375px" alt="tweede scherm van Rhode">
 
 </details>
