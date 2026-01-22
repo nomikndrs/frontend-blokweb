@@ -1,3 +1,60 @@
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --wit:#FFFFFF;
+  --beige:#F1F0EF;
+  --antraciet:#66645F;
+  --bruin:#614135;
+}
+
+body {
+  color: var(--antraciet);
+  background-color: var(--wit);
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron';
+}
+
+p, a, li, label {
+  font-family: 'Inter';
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  border-radius: 1em;
+}
+
+video {
+  width: 100%;
+  border-radius: 1.5rem;
+  
+}
+
+/* Visually hidden H1 van product page en h2 alle pages */
+.products h1{
+  display: none;
+}
+
+h2 {
+  display: none;
+
+}
+
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -5,27 +62,570 @@
   box-sizing:border-box;  
 }
 
-
-
-
-
-
 /*********************/
-/* CUSTOM PROPERTIES */
+/* HEADER & NAVIGATIE */
 /*********************/
-:root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+
+/* header {
+  background-color: var(--beige);
+} */
+header {
+  position: relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  
+  position:sticky;
+  top: 0;
+  z-index: 1;
+}
+
+header h1  {
+  position: absolute;
+  
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+header > button {
+  order: 10;
+}
+
+
+header nav li {
+  font-size: 0.9rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+header nav a {
+  align-items: center;
+}
+
+/* MENU */
+
+header nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  translate: -100% 0%;
+  transition: translate .3s;
+
+  background-color: var(--beige);
+}
+
+nav.toonMenu {
+  translate: 0% 0%;
+}
+
+/***************/
+/* VIDEO (1) */
+/*************/
+.home main section:nth-of-type(1){
+  position: relative;
+  padding: 1rem;
+}
+
+/* video wrapper gedrag (zonder extra div in HTML) */
+.home main section:nth-of-type(1) video{
+  border-radius: 1.5rem;
+}
+
+/* overlay tekst op video */
+.home main section:nth-of-type(1) p{
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 4rem;
+
+  margin:0;
+  color: var(--wit);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+/* overlay link */
+.home main section:nth-of-type(1) a{
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2.6rem;
+
+  color: var(--wit);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  width: fit-content;
+}
+
+/* play button */
+.home main section:nth-of-type(1) button{
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+
+  appearance:none;
+  border: 1px solid rgba(255,255,255,.85);
+  background: rgba(255,255,255,.15);
+  color: var(--wit);
+  border-radius: .25rem;
+  padding: .35rem .75rem;
+  cursor:pointer;
+  backdrop-filter: blur(.25rem);
+}
+
+/***************************/
+/* BESTSELLER PRODUCTS (2) */
+/***************************/
+.home main section:nth-of-type(2){
+  padding-bottom: 1rem;
+}
+
+.home main section:nth-of-type(2) ul{
+  display: grid;
+
+  /* 1 rij, horizontaal */
+  grid-auto-flow: column;
+  grid-auto-columns: 85%;
+
+  gap: 1.5rem;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 0 1rem 1rem;
+  margin: 0;
+}
+
+/* scrollbar verbergen (optioneel) */
+.home main section:nth-of-type(2) ul::-webkit-scrollbar{
+  display:none;
+}
+.home main section:nth-of-type(2) ul{
+  scrollbar-width:none;
+}
+
+/* ✅ FIX: card layout -> flex (geen 1fr stretch) */
+.home main section:nth-of-type(2) li{
+  background: var(--beige);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+
+  scroll-snap-align: start;
+}
+
+/* afbeelding in jouw HTML staat als laatste -> wij zetten 'm bovenaan */
+.home main section:nth-of-type(2) li img{
+  order: -1;
+
+  width: 100%;
+  border-radius: 1rem;
+
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+
+  background: var(--beige);
+  padding: 1rem;
+}
+
+/* margins reset */
+.home main section:nth-of-type(2) li h3,
+.home main section:nth-of-type(2) li h4,
+.home main section:nth-of-type(2) li p,
+.home main section:nth-of-type(2) li a{
+  margin:0;
+}
+
+/* ✅ knop/link altijd onderaan (zonder leegte boven) */
+.home main section:nth-of-type(2) li a{
+  margin-top:auto;
+  color: #5a2bbf;
+  font-weight: 600;
+}
+
+/***************************/
+/* BESTSELLING LIP TINTS (3) */
+/***************************/
+.home main section:nth-of-type(3){
+  position: relative;
+  padding: 0 1rem 1rem;
+}
+
+/* Maak van de afbeelding echt een banner-kaart */
+.home main section:nth-of-type(3) > img{
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+/* Donkere overlay voor leesbaarheid (zonder HTML aan te passen) */
+.home main section:nth-of-type(3)::after{
+  content:"";
+  position:absolute;
+  left:1rem;
+  right:1rem;
+  top:0;
+  bottom:1rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.25) 55%, rgba(0,0,0,0) 100%);
+  pointer-events:none;
+}
+
+/* Alles wat op de banner ligt moet boven de overlay */
+.home main section:nth-of-type(3) h3,
+.home main section:nth-of-type(3) p,
+.home main section:nth-of-type(3) a{
+  position: absolute;
+  z-index: 2;
+  left: 2rem;
+  right: 2rem;     /* ✅ voorkomt dat tekst te breed wordt */
+  margin: 0;
+  color: var(--wit);
+}
+
+/* ✅ zet tekst op basis van TOP i.p.v. bottom -> geen overlap */
+.home main section:nth-of-type(3) h3{
+  top: 2.2rem;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  line-height: 1.05;
+  max-width: 18ch;
+}
+
+.home main section:nth-of-type(3) p{
+  top: 5.6rem;  /* afgestemd op h3 hoogte */
+  font-size: clamp(.95rem, 3.2vw, 1.05rem);
+  line-height: 1.35;
+  max-width: 36ch;
+}
+
+.home main section:nth-of-type(3) a{
+  bottom: 2rem;
+  left: 2rem;
+  right: auto;
+
+  padding: .6rem 1.2rem;
+  border: 2px solid var(--wit);
+  border-radius: 999px;
+
+  color: var(--wit);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+/* Surface plane: hover (desktop) + focus (toetsenbord) */
+.home main section:nth-of-type(3) a:hover,
+.home main section:nth-of-type(3) a:focus-visible{
+  background: rgba(255,255,255,.15);
+  outline: none;
+}
+
+
+/**********/
+/* FOOTER */
+/**********/
+footer{
+  background: var(--beige);
+  padding: 4rem 1.5rem 2rem;
+  color: var(--antraciet);
+}
+
+/* logo */
+footer > img{
+  width: min(100%, 70rem);
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  border-radius: 0;
+}
+
+/* inhoud */
+footer > section{
+  border-top: 1px solid rgba(0,0,0,.25);
+  padding-top: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* nieuwsbrief */
+footer form{
+  display: grid;
+  gap: 1rem;
+}
+
+footer form label{
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+  justify-self: start;
+  text-align: left;
+}
+
+footer form input{
+  width: 100%;
+  padding: .8rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.25);
+  background: var(--wit);
+}
+
+footer form button{
+  justify-self: start;
+  padding: .75rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.25);
+  background: transparent;
+  cursor: pointer;
+}
+
+footer form p{
+  margin: 0;
+  font-size: .9rem;
+  opacity: .85;
+}
+
+/* 🔥 BELANGRIJK: footer nav reset (anders krijgt footer menu-overlay gedrag) */
+footer nav{
+  position: static;
+  inset: auto;
+  translate: none;
+  transform: none;
+  transition: none;
+  background: transparent;
+}
+
+/* footer nav layout */
+footer nav{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: .75rem;
+  align-items: start;
+}
+
+footer nav h3{
+  margin: 0 0 .75rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .95rem;
+}
+
+footer nav ul{
+  margin: 0;
+  padding: 0;
+}
+
+footer nav li{
+  margin: 0 0 .7rem;
+}
+
+footer nav a{
+  color: var(--antraciet);
+}
+
+/* plaatsing zodat h3+ul netjes onder elkaar blijven */
+footer nav h3:nth-of-type(1){ grid-column: 1; grid-row: 1; }
+footer nav ul:nth-of-type(1){ grid-column: 1; grid-row: 2; }
+footer nav h3:nth-of-type(2){ grid-column: 2; grid-row: 1; }
+footer nav ul:nth-of-type(2){ grid-column: 2; grid-row: 2; }
+
+/* country midden */
+footer > label{
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+}
+
+footer > select{
+  display: block;
+  margin-inline: auto;
+  padding: .6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.25);
+  background: var(--wit);
+  color: var(--antraciet);
+}
+
+/* optioneel: footer iets ruimer op grotere schermen */
+@media (min-width: 48rem){
+  footer > section{
+    grid-template-columns: 1.6fr 1fr;
+    gap: 4rem;
+  }
+  footer form button{
+    justify-self: end;
+  }
 }
 
 
 
 
 
-/****************/
-/* JOUW STYLING */
-/****************/
+/* ben hier nog mee bezig!! */
+/******************/
+/* PRODUCTS PAGE */
+/*****************/
 
-/* jouw code */
+.products main > section:first-of-type{
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin: 0;
+}
 
+/* =============================== */
+/* LINKS: GALLERY */
+/* =============================== */
+
+.products main > section:first-of-type > ul{
+  display: grid;
+  grid-template-columns: 1fr 5.5rem;
+  grid-template-rows: repeat(5, 5.5rem);
+  gap: 1rem;
+
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* grote afbeelding plek */
+.products main > section:first-of-type > ul li:nth-child(1){
+  grid-column: 1;
+  grid-row: 1 / -1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* thumbnails rechts */
+.products main > section:first-of-type > ul li:nth-child(2){ grid-column: 2; grid-row: 1; }
+.products main > section:first-of-type > ul li:nth-child(3){ grid-column: 2; grid-row: 2; }
+.products main > section:first-of-type > ul li:nth-child(4){ grid-column: 2; grid-row: 3; }
+.products main > section:first-of-type > ul li:nth-child(5){ grid-column: 2; grid-row: 4; }
+
+/* alle media */
+.products main > section:first-of-type > ul img,
+.products main > section:first-of-type > ul video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  display: block;
+}
+
+/* thumbnails klikbaar */
+.products main > section:first-of-type > ul li:nth-child(n+2){
+  cursor: pointer;
+}
+
+/* =============================== */
+/* :HAS() – TAB EFFECT (GEEN KNIPPER) */
+/* =============================== */
+
+/* basis: alleen eerste zichtbaar */
+.products main > section:first-of-type > ul li:nth-child(1) img,
+.products main > section:first-of-type > ul li:nth-child(1) video{
+  z-index: 1;
+}
+
+/* hover → toon image als overlay */
+.products main > section:first-of-type > ul li:nth-child(n+2) img,
+.products main > section:first-of-type > ul li:nth-child(n+2) video{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* THUMB 2 */
+.products main > section:first-of-type > ul:has(li:nth-child(2):hover)
+li:nth-child(2) img,
+.products main > section:first-of-type > ul:has(li:nth-child(2):hover)
+li:nth-child(2) video{
+  opacity: 1;
+}
+
+/* THUMB 3 */
+.products main > section:first-of-type > ul:has(li:nth-child(3):hover)
+li:nth-child(3) img,
+.products main > section:first-of-type > ul:has(li:nth-child(3):hover)
+li:nth-child(3) video{
+  opacity: 1;
+}
+
+/* THUMB 4 */
+.products main > section:first-of-type > ul:has(li:nth-child(4):hover)
+li:nth-child(4) img,
+.products main > section:first-of-type > ul:has(li:nth-child(4):hover)
+li:nth-child(4) video{
+  opacity: 1;
+}
+
+/* THUMB 5 */
+.products main > section:first-of-type > ul:has(li:nth-child(5):hover)
+li:nth-child(5) img,
+.products main > section:first-of-type > ul:has(li:nth-child(5):hover)
+li:nth-child(5) video{
+  opacity: 1;
+}
+
+/* =============================== */
+/* RECHTS: INFO */
+/* =============================== */
+
+.products main > section:first-of-type > section{
+  background: var(--beige);
+  padding: 2.5rem;
+  border-radius: 1.75rem;
+
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* titel */
+.products main > section:first-of-type > section h2{
+  display: block;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* subtitel */
+.products main > section:first-of-type > section p:first-of-type{
+  font-weight: 600;
+  margin: 0;
+}
+
+/* tekst */
+.products main > section:first-of-type > section p{
+  margin: 0;
+  max-width: 40ch;
+}
+
+/* select */
+.products main > section:first-of-type select{
+  padding: .75rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.2);
+}
+
+/* koopknop */
+.products main > section:first-of-type button{
+  padding: .9rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  background: #e87b9a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}

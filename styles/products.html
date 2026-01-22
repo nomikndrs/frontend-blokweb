@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="products">
+    <header>
+        <!-- De open button -->
+        <button aria-hidden="true">Menu</button>
+        <nav>
+            <!-- De sluit button -->
+            <button aria-hidden="true">Menu</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <!-- visually hidden -->
+            <h1>Productpage of Rhode peptide lip tints</h1>
+            <section>
+                <h2>Scented peptide lip tint</h2>
+                <p>The tinted lip layer</p>
+                <p>Meet the Scented Peptide Lip Tint in Espresso. A sweet twist on the classic rich brown shade that
+                    smells like a spoonful of tiramisu. Our timeless, award-winning formula melts onto lips for
+                    sheer-but-buildable color and yummy, decadent scent. Limited edition for this fall and winter. Size:
+                    10ml / .3 fl oz. </p>
+
+                <label for="shade">Shade</label>
+                <select name="shade">
+                    <option value="espresso">Espresso - rich brown</option>
+                    <option value="ribbon">Ribbon - sheer pink</option>
+                    <option value="toast">Toast - rose taupe</option>
+                    <option value="raspberry-jelly">Raspberry Jelly - crushed berry</option>
+                </select>
+
+                <button>Buy lip tint - €26,00</button>
+            </section>
+            <!-- Hier nog ALT tekst -->
+            <ul>
+                <li><img src="images/7-espr1.jpg" alt="#"></li>
+                <li><img src="images/7-espr2.jpg" alt="#"></li>
+                <li><video autoplay muted loop playsinline></videoautoplay>
+                        <source src="images/7-espr3.mp4" type="video/mp4">
+                    </video>
+                </li>
+                <li><img src="images/7-espr4.jpg" alt="#"></li>
+                <li><img src="images/7-espr5.jpg" alt="#"></li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Espresso smells like a spoonful of tiramisu</h2>
+            <ul>
+                <!-- ALT tekst later toevoegen -->
+                <li><img src="images/9-espr.jpg" alt="#"></li>
+                <li><img src="images/9-esprmirror.jpg" alt="#"></li>
+                <li><img src="images/9-esprlips.jpg" alt="#"></li>
+                <li><img src="images/9-esprtint.jpg" alt="#"></li>
+                <li><img src="images/9-esprhailey.jpg" alt="#"></li>
+                <li><img src="images/9-esprcase.jpg" alt="#"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Nourishing GLAZE with a hint of TINT + SCENT.</h2>
+            <p>FEELS LIKE: Rich, velvetly gloss, that melts onto lips</p>
+            <p>SMELLS LIKE: A spoonful of tiramisu</p>
+            <p>LOOKS LIKE: A glossy wash of rich brown</p>
+            <p>FYI: Cruelty free - Vegan - Dermatologist-Tested</p>
+            <img src="images/10-tiramisu.jpg" alt="Lip tint in Espresso with tiramisu">
+        </section>
+
+        <section>
+            <video src="images/11-haileyswatching.mov" type="video/mov"></video>
+            <p>See how HAILEY wears each shade of LIP TINT</p>
+            <button>Play</button>
+        </section>
+
+        <!-- Nav kleuren -->
+        <nav>
+            <ul>
+                <h2>Scented peptide lip tint</h2>
+                <!-- Afbeeldingen nog toevoegen -->
+                <li><img src="images/8-colorespresso.png" alt="Espresso lip tint"></li>
+                <li><img src="images/8-colorribbon.png" alt="Ribbon lip tint"></li>
+                <li><img src="images/8-colortoast.png" alt="Toast lip tint"></li>
+                <li><img src="images/8-colorrasp.png" alt="Raspberry Jelly lip tint"></li>
+                <button>Buy lip tint - €26,00</button>
+            </ul>
+        </nav>
+    </main>
+
+    <footer>
+        <img src="images/logofooter.png" alt="Rhode logo">
+
+        <section>
+            <!-- // Visually hidden maken -->
+            <h2>Newsletter</h2>
+
+            <form>
+                <label for="join-us">Join us on the rhode to an effortless glow</label>
+                <input id="join-us" type="email">
+                <button>Subscribe</button>
+                <p>By signing up, you agree to our Privacy Policy.</p>
+            </form>
+
+            <nav>
+                <h3>Navigate</h3>
+                <ul>
+                    <li><a href="index.html">Shop</a></li>
+                    <li><a href="index.html">Our story</a></li>
+                    <li><a href="index.html">Rhode Futures</a></li>
+                </ul>
+
+                <h3>Official</h3>
+                <ul>
+                    <li><a href="index.html">Privacy</a></li>
+                    <li><a href="index.html">Terms</a></li>
+                    <li><a href="index.html">FAQ</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </section>
+
+        <label for="country">Country</label>
+        <select name="country">
+            <option value="nl"> The Netherlands (EUR €)</option>
+            <option value="de"> Germany (EUR €)</option>
+            <option value="uk"> United Kingdom (GBP £)</option>
+            <option value="us"> United States (USD $)</option>
+        </select>
+    </footer>
+<script src="script.js"></script>
+
+</body>
+
+</html>
