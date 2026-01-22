@@ -1,22 +1,141 @@
 <!DOCTYPE html>
-<html lang="nl">
-	
+<html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="author" content="jouw naam">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>Howdy FED2526</title>
-
-	<link href="styles/style.css" rel="stylesheet">
-
-	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhode</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-	<h1>Howdy FED2526</h1>
+<body class="home">
+    <header>
+        <!-- De open button -->
+        <button aria-hidden="true">Menu</button>
+        <nav>
+            <!-- De sluit button -->
+            <button aria-hidden="true">Menu</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+        </nav>
+        <h1>
+            <img src="images/logohead.jpeg" alt="Rhode logo">
+        </h1>
 
-	<script defer src="scripts/script.js"></script>
+    </header>
+
+    <main>
+        <section>
+           
+        <video>
+            <source src="images/promo.mp4" type="video/mp4">
+        </video>
+        <p>Hailey's birthday edit is live.</p>
+        <a href="products.html">Shop the collection</a>
+        <button>Play</button>
+        </section>
+
+        <section>
+            <!-- // Visually hidden maken -->
+            <h2>Bestseller products</h2>
+
+            <ul>
+                <li>
+                    <h3>Case</h3>
+                    <h4>Snap-on lip case</h4>
+                    <p>Lipholder with magsafe</p>
+                    <p>€60</p>
+                    <a href="products.html">Buy lip case</a>
+                    <img src="images/1-snaponcase.png" alt="Rhode snap-on lip case">
+                </li>
+
+                <li>
+                    <h3>Tint</h3>
+                    <h4>Scented peptide lip tint</h4>
+                    <p>The tinted lip layer</p>
+                    <p>€26</p>
+                    <a href="products.html">Buy lip tint</a>
+                    <img src="images/2-liptint.png" alt="Rhode lip tint Toast">
+                </li>
+
+                <li>
+                    <h3>Lip tints</h3>
+                    <h4>The scented peptide lip tint set</h4>
+                    <p>Four shades together</p>
+                    <p>€70</p>
+                    <a href="products.html">Buy the lip tints</a>
+                    <img src="images/3-liptintset.png" alt="Rhode lip tint collection">
+                </li>
+
+                <li>
+                    <h3>Case</h3>
+                    <h4>Lip case</h4>
+                    <p>Your essentials in one place</p>
+                    <p>€50</p>
+                    <a href="products.html">Buy lip case</a>
+                    <img src="images/4-case.png" alt="Rhode lip case">
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <!-- // Visually hidden maken -->
+            <h2>Bestselling lip tints</h2>
+
+            <img src="images/5-liptints.jpg" alt="Rhode lip tints collection">
+            <h3>The scented lip tints</h3>
+            <p>The four original Peptide Lip Tints, now with scent. A timeless, award-winning formula that melts onto
+                lips for sheer-but-buildable color and glossy hydration.</p>
+            <a href="products.html">Get them all</a>
+        </section>
+    </main>
+
+
+    <footer>
+        <img src="images/logofooter.png" alt="Rhode logo">
+
+        <section>
+            <!-- // Visually hidden maken -->
+            <h2>Newsletter</h2>
+            
+            <form>
+                <label for="join-us">Join us on the rhode to an effortless glow</label>
+                <input id="join-us" type="email">
+                <button>Subscribe</button>
+                <p>By signing up, you agree to our Privacy Policy.</p>
+            </form>
+
+            <nav>
+                <h3>Navigate</h3>
+                <ul>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="products.html">Our story</a></li>
+                    <li><a href="products.html">Rhode Futures</a></li>
+                </ul>
+
+                <h3>Official</h3>
+                <ul>
+                    <li><a href="products.html">Privacy</a></li>
+                    <li><a href="products.html">Terms</a></li>
+                    <li><a href="products.html">FAQ</a></li>
+                    <li><a href="products.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </section>
+
+        <label for="country">Country</label>
+        <select name="country">
+            <option value="nl"> The Netherlands (EUR €)</option>
+            <option value="de"> Germany (EUR €)</option>
+            <option value="uk"> United Kingdom (GBP £)</option>
+            <option value="us"> United States (USD $)</option>
+        </select>
+    </footer>
+<script src="script.js"></script>
+
 </body>
-	
+
 </html>
